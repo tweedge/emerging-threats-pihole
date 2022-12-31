@@ -4,7 +4,6 @@ from idstools import rule
 from datetime import date
 import tldextract
 from os import makedirs
-from pprint import pprint
 
 description = (
     "Given a file containing a list of Suricata rules, extract any blocked domains."

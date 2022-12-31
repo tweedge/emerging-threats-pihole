@@ -1,6 +1,9 @@
 # emerging-threats-dnsbl
 
-Extracts and categorizes domains from Emerging Threats Open rules for people using PiHole and other filtering resolvers, to provide coverage of certain new threats from a reliable source. Updates automatically every day.
+[![Status](https://github.com/tweedge/emerging-threats-dnsbl/actions/workflows/generate.yml/badge.svg)](https://hosts.tweedge.net/)
+[![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
+
+Extracts and categorizes domains from Emerging Threats Open rules for people using PiHole and other filtering resolvers, to provide coverage of some new threats from a reliable source. Updates automatically every day.
 
 ### Lists
 

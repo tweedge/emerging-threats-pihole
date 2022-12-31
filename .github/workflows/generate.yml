@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '45 * * * *'
+    - cron: '8 0 * * *'
 
 jobs:
   scan:

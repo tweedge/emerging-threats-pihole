@@ -73,8 +73,8 @@ def write_by_category(category, write_this):
         informational_file.write(f"{write_this}\n")
 
 
-header = """# (Unofficial) Emerging Threats DNSBL
-# https://github.com/tweedge/emerging-threats-dnsbl
+header = """# (Unofficial) Emerging Threats PiHole blocklist
+# https://github.com/tweedge/emerging-threats-pihole
 #
 # Category: {}
 # Description: {}
@@ -107,11 +107,11 @@ header = """# (Unofficial) Emerging Threats DNSBL
 #
 # SOMETHING IS WRONG:
 # Sorry! This is NOT an official Emerging Threats project and while I'll do my best to ensure correctness,
-# this DNSBL is not provided with any guarantees.
-# Please report false positives or other issues here: https://github.com/tweedge/emerging-threats-dnsbl/issues
+# this hosts file is not provided with any guarantees.
+# Please report false positives or other issues here: https://github.com/tweedge/emerging-threats-pihole/issues
 # 
 # LICENSE:
-# Emerging Threats community rules, from which this DNSBL is derived, are BSD-licensed:
+# Emerging Threats community rules, from which this hosts file is derived, are BSD-licensed:
 #  Copyright (c) 2003-2021, Emerging Threats
 #  All rights reserved.
 #  

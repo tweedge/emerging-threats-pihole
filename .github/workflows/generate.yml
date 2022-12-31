@@ -1,4 +1,4 @@
-name: 'Generate DNSBL'
+name: 'Generate Block List'
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       run: pip install -r requirements.txt
     - name: Download ET Open Suricata 5 rules
       run: bash fetch_et_open.sh
-    - name: Generate DNSBL from ET Open rules
+    - name: Generate hosts files from ET Open rules
       run: python3 et2dns.py --rules emerging-all.suricata5.rules
     - name: Copy artisanal index file
       run: cp misc/index.html output/

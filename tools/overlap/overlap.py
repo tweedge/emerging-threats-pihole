@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import argparse
-from pprint import pprint
+import tldextract
 
 description = "(Roughly) check overlap of two lists of domains"
 
@@ -31,7 +31,18 @@ for something_line in something_file:
 for dnsbl_line in dnsbl_file:
     dnsbl_line = dnsbl_line.strip()
 
-    if len(dnsbl_line) < 1:
+    # skip empty lines
+    if dnsbl_line == "":
+        continue
+
+    # skip commented lines
+    if dnsbl_line[0] == "#":
+        continue
+
+    parsed_domain = tldextract.extract(dnsbl_line)
+
+    # skip any non-domains
+    if parsed_domain.domain == "" or parsed_domain.suffix == "":
         continue
 
     dnsbl_lines += 1

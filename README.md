@@ -5,6 +5,11 @@
 
 Extracts and categorizes domains from Emerging Threats Open rules for people using PiHole and other filtering resolvers, to provide coverage of some new threats from a reliable source. Updates automatically every day.
 
+Key statistics for `malicious.txt` at launch:
+
+* **~96%** of domains were not found in popular PiHole anti-malware lists
+* Over 2,100 unique domains blocked used by major malware strains, APTs, and more
+
 ### Lists
 
 * **RECOMMENDED: [malicious.txt](https://hosts.tweedge.net/malicious.txt)** - Blocks malware, phishing, coin miners, PUPs, exploits, etc. Suitable for home or corporate environments.
@@ -13,7 +18,7 @@ Extracts and categorizes domains from Emerging Threats Open rules for people usi
 
 ### FAQ
 
-**Where is this data coming from / what is Emerging Threats?** [Emerging Threats](https://doc.emergingthreats.net/bin/view/Main/EmergingFAQ) is a part of Proofpoint, Inc. They maintain the Emerging Threats ruleset, which is a free (BSD-licensed) list of rules made by security researchers around the world. Using Emerging Threats and other rulesets, you can detect and prevent malicious network activity using an IPS (Intrusion Prevention System) such as [Snort](https://www.snort.org/) or [Suricata](https://suricata.io/).
+**Where is this data coming from / what is Emerging Threats?** [Emerging Threats](https://doc.emergingthreats.net/bin/view/Main/EmergingFAQ) is a part of Proofpoint, Inc. They maintain the Emerging Threats ruleset, which is a free (BSD-licensed) list of rules contributed to by their team and security researchers around the world. Using Emerging Threats and other rulesets, you can detect and prevent malicious network activity using an IPS (Intrusion Prevention System) such as [Snort](https://www.snort.org/) or [Suricata](https://suricata.io/).
 
 **Whoah, an IPS sounds cool. Is this how corporations protect themselves?** Using an IPS is often part of how corporations protect themselves, yep!
 

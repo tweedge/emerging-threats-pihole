@@ -1,4 +1,4 @@
-name: 'Generate DNSBL from current Emerging Threats rules'
+name: 'Generate DNSBL'
 
 on:
   push:

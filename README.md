@@ -1,7 +1,11 @@
 # emerging-threats-dnsbl
 Extracts and categorizes domains from Emerging Threats Open rules for people using PiHole and other filtering resolvers.
 
-Unhandled case:
+Unhandled cases:
 ```
-alert udp $HOME_NET any -> any 53 (msg:"ET TROJAN BernhardPOS Possible Data Exfiltration via DNS Lookup (29a.de)"; content:"|01|"; offset:2; depth:1; content:"|00 01 00 00 00 00 00|"; distance:1; within:7; pcre:"/^.(?=[a-z0-9+/]*?[A-Z])(?=[A-Z0-9+/]*?[a-z])(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})\x0329a\x02de\x00/R"; content:"|03|29a|02|de|00|"; nocase; fast_pattern:only; reference:url,morphick.com/blog/2015/7/14/bernhardpos-new-pos-malware-discovered-by-morphick; classtype:trojan-activity; sid:2021416; rev:2; metadata:created_at 2015_07_15, updated_at 2020_09_17;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"ET POLICY Observed URL Shortening Service SSL/TLS Cert (rb.gy)"; flow:from_server,established; tls.cert_subject; content:"CN=rb.gy"; fast_pattern; classtype:policy-violation; sid:2036628; rev:1; metadata:created_at 2022_05_19, former_category POLICY, updated_at 2022_05_19;)
+```
+
+```
+alert dns $HOME_NET any -> any any (msg:"ET POLICY My2022/Beijing2022 App (DNS Lookup) 1"; dns_query; content:"bigdata.beijing2022.cn"; isdataat:!1,relative; reference:url,citizenlab.ca/2022/01/cross-country-exposure-analysis-my2022-olympics-app/; classtype:trojan-activity; sid:2034994; rev:2; metadata:created_at 2022_01_28, former_category POLICY, updated_at 2022_01_28;)
 ```

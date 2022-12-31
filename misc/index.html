@@ -1,0 +1,21 @@
+<html><head></head><body><code>
+&nbsp;&nbsp;&nbsp;&nbsp;(Unofficial) Emerging Threats DNS blocklists<br><br>
+Project repository: <a href="https://github.com/tweedge/emerging-threats-dnsbl">https://github.com/tweedge/emerging-threats-dnsbl</a><br><br>
+<strong>FILES AVAILABLE:</strong><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://hosts.tweedge.net/malicious.txt">malicious.txt</a> (recommended)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://hosts.tweedge.net/suspicious.txt">suspicious.txt</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://hosts.tweedge.net/informational.txt">informational.txt</a><br><br>
+<strong>WHAT:</strong><br>
+These blocklists are intended for use in PiHole or similar DNS-level filters. They are generated automatically from part of the current Emerging Threats Open ruleset, which is threat intelligence and signatures provided by the Emerging Threats research team and contributed to by security researchers around the world.<br><br>
+<strong>TECHNICAL NOTICE:</strong><br>
+While this list provides some DNS filtering coverage, the provided filter is NOT comparable to protection offered by Emerging Threats' signatures when implemented in an IPS such as Snort or Suricata. This is because IDS can perform advanced matching functionality and make bypassing the filter much more difficult. Some key examples:<br><br>
+ * If a particular strain of malware queries the public DNS resolver 8.8.8.8 directly, this could bypass PiHole on your network.<br>
+ * Emerging Threats includes much more than blocking specific domains, such as detecting and blocking DNS exfiltration attacks based on different parts of the DNS payload that PiHole would simply ignore.<br>
+ * And of course, Emerging Threats covers 100s or 1000s of different protocols with their signatures, extending FAR beyond DNS! This allows researchers to write very specific rules to detect and block threats at the network level, making it harder for malware or threats to hide from security staff by just changing what domain they use. After all, a domain can cost only a few dollars - but re-engineering your custom malware implant could take days!<br><br>
+<strong>WHY:</strong><br>
+First, of course I hope this can help you keep some malware/unwanted traffic/etc. off your network!<br>
+Second, for folks interested in cybersecurity (personal or career) that you get a glimpse of some new technology that you may not have heard of before and something fun to learn about - or maybe contribute to in the future! :)<br><br>
+<strong>SOMETHING IS WRONG:</strong><br>
+Sorry! This is NOT an official Emerging Threats project and while I'll do my best to ensure correctness, these files are not provided with any guarantees.<br>
+Please report false positives or other issues here: <a href="https://github.com/tweedge/emerging-threats-dnsbl/issues">https://github.com/tweedge/emerging-threats-dnsbl/issues</a>
+</code></body></html>

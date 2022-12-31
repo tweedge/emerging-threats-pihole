@@ -3,7 +3,7 @@
 [![Status](https://github.com/tweedge/emerging-threats-pihole/actions/workflows/generate.yml/badge.svg)](https://hosts.tweedge.net/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 
-Extracts and categorizes domains from Emerging Threats Open rules for people using PiHole and other filtering resolvers, to provide coverage of some new threats from a reliable source. Updates automatically every day.
+This repository extracts and categorizes malicious/unwanted domains from Emerging Threats ruleset for people using PiHole to block easily. This allows home users to get some additional defense against new threats, using professional threat intelligence sources effortlessly and providing a window into some technology used to secure large or sensitive networks.
 
 Key statistics for `malicious.txt` at launch:
 

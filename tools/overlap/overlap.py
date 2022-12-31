@@ -39,7 +39,10 @@ for dnsbl_line in dnsbl_file:
     if dnsbl_line[0] == "#":
         continue
 
-    parsed_domain = tldextract.extract(dnsbl_line)
+    line_components = dnsbl_line.split("\t")
+    domain = line_components[1]
+
+    parsed_domain = tldextract.extract(domain)
 
     # skip any non-domains
     if parsed_domain.domain == "" or parsed_domain.suffix == "":
@@ -49,11 +52,11 @@ for dnsbl_line in dnsbl_file:
 
     overlapped = False
     for something_line in something:
-        if dnsbl_line in something_line:
+        if domain in something_line:
             overlapped = True
 
     if overlapped:
-        print(dnsbl_line)
+        print(domain)
         overlap += 1
 
 print("")

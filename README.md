@@ -9,6 +9,7 @@ Key statistics for `malicious.txt` at launch:
 
 * **~96%** of domains were not found in popular PiHole anti-malware lists
 * Over 2,100 unique domains blocked used by major malware strains, APTs, and more
+* 1 confirmed-malicious domain in `malicious.txt` is in [Cloudflare Radar](https://radar.cloudflare.com/domains)'s top 10k highest traffic domains
 
 ### Lists
 

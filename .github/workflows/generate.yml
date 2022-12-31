@@ -1,4 +1,4 @@
-name: 'Generate Block List'
+name: 'Generate Blocklist'
 
 on:
   push:

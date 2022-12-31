@@ -95,10 +95,10 @@ header = """# (Unofficial) Emerging Threats DNSBL
 #    your network.
 #  * Emerging Threats includes much more than blocking specific domains, such as detecting and blocking DNS
 #    exfiltration attacks based on different parts of the DNS payload that PiHole would simply ignore.
-#  * And of course, Emerging Threats covers 100s or 1000s of different protocols with their signatures, extending
-#    FAR beyond DNS! This allows researchers to write very specific rules to detect and block threats at the network
-#    level, making it harder for malware or threats to hide from security staff by just changing what domain they use.
-#    After all, a domain can cost only a few dollars - but re-engineering your custom malware implant could take days!
+#  * And of course, Emerging Threats covers 100s of different protocols with their signatures, extending FAR beyond
+#    DNS! This allows researchers to write very specific rules to detect and block threats at the network level,
+#    making it harder for malware or threats to hide from security staff by just changing what domain they use.
+# After all, a domain can cost only a few dollars - but re-engineering your custom malware implant could take days!
 #
 # WHY:
 # First, of course I hope this can help you keep some malware/unwanted traffic/etc. off your network!

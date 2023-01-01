@@ -4,6 +4,7 @@ from idstools import rule
 from datetime import date
 import tldextract
 from os import makedirs
+from pprint import pprint
 
 description = (
     "Given a file containing a list of Suricata rules, extract any blocked domains."
@@ -40,7 +41,7 @@ categories = {
         ],
     },
     "SUSPICIOUS": {
-        "description": "Blocks some dynamic DNS, link shorteners, pastebin services, games, etc.",
+        "description": "Blocks link shorteners, pastebin services, games, etc.",
         "utility": "Moderate - useful in strict corporate environments, maybe not at home",
         "count": 0,
         "tags": [
@@ -51,7 +52,7 @@ categories = {
         ],
     },
     "INFORMATIONAL": {
-        "description": "Blocks benign callbacks and some potentially unwanted sites (ex. file sharing), etc.",
+        "description": "Blocks more link shorteners, benign callbacks, and some potentially unwanted sites (ex. file sharing), etc.",
         "utility": "Low - may be useful in certain strict corporate environments",
         "count": 0,
         "tags": ["ET INFO", "ET HUNTING"],
@@ -80,7 +81,7 @@ header = """# (Unofficial) Emerging Threats PiHole blocklist
 # Description: {}
 # Utility: {}
 # Status: Beta / in development
-# Updated: {}
+# Last modified: {}
 #
 # WHAT:
 # This blocklist is intended for use in PiHole or similar DNS-level filters. It's generated automatically from part of
@@ -160,11 +161,18 @@ for line in rules_in_file:
     parsed_rule = rule.parse(input_rule)
 
     # skip non-DNS rules
-    if not "dns.query" in parsed_rule.keys():
+    if not "dns.query" in parsed_rule.keys() and not "dns_query" in parsed_rule.keys():
         continue
 
     # domain components are not suitable for DNSBL
-    if not "endswith" in parsed_rule.keys():
+    may_be_component_of_domain = True
+    if "endswith" in parsed_rule.keys():
+        may_be_component_of_domain = False
+    if "isdataat" in parsed_rule.keys():
+        if parsed_rule["isdataat"] == "!1,relative":
+            may_be_component_of_domain = False
+
+    if may_be_component_of_domain:
         continue
 
     # regex may not be possible in DNSBL

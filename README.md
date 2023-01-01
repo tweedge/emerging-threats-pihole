@@ -3,7 +3,7 @@
 [![Status](https://github.com/tweedge/emerging-threats-pihole/actions/workflows/generate.yml/badge.svg)](https://hosts.tweedge.net/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 
-This repository extracts and categorizes malicious/unwanted domains from the Emerging Threats ruleset for people using PiHole to block easily. The lists available are:
+This repository extracts and categorizes malicious/unwanted domains from the Emerging Threats ruleset for people using PiHole to block easily. The lists available are below, and are updated daily:
 
 * **RECOMMENDED [malicious.txt](https://hosts.tweedge.net/malicious.txt)** - Blocks malware, phishing, coin miners, PUPs, exploits, etc. Suitable for home or corporate environments.
 * [suspicious.txt](https://hosts.tweedge.net/suspicious.txt) - Blocks some dynamic DNS, link shorteners, pastebin services, games, etc. Suitable for strict corporate environments.

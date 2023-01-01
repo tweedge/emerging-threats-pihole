@@ -3,19 +3,13 @@
 [![Status](https://github.com/tweedge/emerging-threats-pihole/actions/workflows/generate.yml/badge.svg)](https://hosts.tweedge.net/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 
-This repository extracts and categorizes malicious/unwanted domains from Emerging Threats ruleset for people using PiHole to block easily. This allows home users to get some additional defense against new threats, using professional threat intelligence sources effortlessly and providing a window into some technology used to secure large or sensitive networks.
+This repository extracts and categorizes malicious/unwanted domains from the Emerging Threats ruleset for people using PiHole to block easily. The lists available are:
 
-Key statistics for `malicious.txt` at launch:
-
-* **~96%** of domains were not found in popular PiHole anti-malware lists
-* Over 2,100 unique domains blocked used by major malware strains, APTs, and more
-* 1 confirmed-malicious domain in `malicious.txt` is in [Cloudflare Radar](https://radar.cloudflare.com/domains)'s top 10k highest traffic domains
-
-### Lists
-
-* **RECOMMENDED: [malicious.txt](https://hosts.tweedge.net/malicious.txt)** - Blocks malware, phishing, coin miners, PUPs, exploits, etc. Suitable for home or corporate environments.
+* **RECOMMENDED [malicious.txt](https://hosts.tweedge.net/malicious.txt)** - Blocks malware, phishing, coin miners, PUPs, exploits, etc. Suitable for home or corporate environments.
 * [suspicious.txt](https://hosts.tweedge.net/suspicious.txt) - Blocks some dynamic DNS, link shorteners, pastebin services, games, etc. Suitable for strict corporate environments.
 * [informational.txt](https://hosts.tweedge.net/informational.txt) - Blocks benign callbacks and some potentially unwanted sites (ex. file sharing), etc. May be useful in *some* strict corporate environments.
+
+This allows home users to increase their defenses against new threats, and provides a window into some technology used to secure large or sensitive networks. At launch (2022-12-31), the `malicious.txt` host file blocked >2,100 unique domains (including domains used by major malware strains, APTs, and more) and *~96% of these domains were not found in popular PiHole anti-malware lists.*
 
 ### FAQ
 
@@ -28,6 +22,16 @@ Key statistics for `malicious.txt` at launch:
 **How effective is this compared to running an IDS with Emerging Threats rulesets?** Not effective - however, most home users won't run an IPS, and this at least can help them extract some value from Emerging Threats' and security researchers' work. It's not comprehensive protection, because it's not *designed* to be comprehensive protection. Essentially: if you have PiHole running already, here's something cool that you can get some value out of & learn more about security from - if you don't have PiHole running already, I wouldn't jump to implement one just to use these rules.
 
 **If this doesn't provide a security guarantee, why bother?** It's better than nothing, and there are some particularly nasty threats that are covered in here (shameless plug for my work tracking [ViperSoftX](https://chris.partridge.tech/2022/evolution-of-vipersoftx-dga/) malware). Additionally, I'm hoping that this can help introduce people who are interested in tech (like PiHole) to some cool security topics like IPS, network security, writing Snort rules, etc. :)
+
+### DIY
+
+Interested in running the scripts in this repository yourself? It's pretty simple:
+
+* Download the Suricata 5 verion of ET Open rulesets (you can use `fetch_et_open.sh` for this)
+* Install Python dependencies via `pip install -r requirements.txt`
+* Execute `python3 et2dns.py --rules <wherever you saved the ET Open rules file>`
+
+All files will be generated and placed in a directory called `output` within a few seconds. The automatic updating function is essentially just the above placed into a GitHub Action [here](https://github.com/tweedge/emerging-threats-pihole/blob/main/.github/workflows/generate.yml), with the added step of uploading the results to my chosen CDN provider.
 
 ### Todos
 

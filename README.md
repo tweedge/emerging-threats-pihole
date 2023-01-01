@@ -17,11 +17,17 @@ This allows home users to increase their defenses against new threats, and provi
 
 **Whoah, an IPS sounds cool. Is this how corporations protect themselves?** Using an IPS is often part of how corporations protect themselves, yes! An IPS allows you to monitor traffic flowing through a network, dissecting that traffic in near-realtime to look for threats based on rules that security engineers and researchers write. Emerging Threats (owned by Proofpoint) is one of the major vendors of those rules (alongside Cisco Talos and others) but you can also write your own IPS rules with a bit of background knowledge! If you have some networking/IT experience already, you may be ready to write these (with a bit of effort) if you follow [Motasem Hamdan's guide](https://www.youtube.com/watch?v=pvPdOO2VcwM) through the Snort IDS TryHackMe challenge.
 
-**Will this protect me from *all* malware/phishing/etc?** No. However when testing in 2022, I did find that of over 2,000 malicious domains blocked by Emerging Threats, only ~80 existed in common anti-malware lists used in PiHole (from [firebog.net](https://firebog.net/)). To increase the malware-fighting capabilities of your PiHole, I would *strongly* recommend using a public filtering DNS resolver which will have many more sources of threat intelligence integrated, such as [Quad9](https://www.quad9.net/) - but even then that is part of a cybersecurity stack, there is no all-in-one complete solution.
-
 **How effective is this compared to running an IDS with Emerging Threats rulesets?** Not effective - however, most home users won't run an IPS, and this at least can help them extract some value from Emerging Threats' and security researchers' work. It's not comprehensive protection, because it's not *designed* to be comprehensive protection. Essentially: if you have PiHole running already, here's something cool that you can get some value out of & learn more about security from - if you don't have PiHole running already, I wouldn't jump to implement one just to use these rules.
 
+**...So will this protect me from malware/phishing/etc?** Some, yes. It's one source of threat intelligence among many that you can use - but finding and curating many sources of threat intelligence is difficult. To increase the malware-fighting capabilities of your PiHole, I would *strongly* recommend using a public filtering DNS resolver which will have many more sources of threat intelligence integrated already, such as [Quad9](https://www.quad9.net/). However, please remember that is *part* of your cybersecurity stack, there is no all-in-one complete solution and there is no machine that can protect you from *all* malware/phishing/etc.
+
 **If this doesn't provide a security guarantee, why bother?** It's better than nothing, and there are some particularly nasty threats that are covered in here (shameless plug for my work tracking [ViperSoftX](https://chris.partridge.tech/2022/evolution-of-vipersoftx-dga/) malware). Additionally, I'm hoping that this can help introduce people who are interested in tech (like PiHole) to some cool security topics like IPS, network security, writing Snort rules, etc. :)
+
+### Notice of Non-Affiliation
+
+This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Emerging Threats, Proofpoint, or any of their subsidiaries or their affiliates. The official Emerging Threats rulesets can be found at [https://rules.emergingthreats.net/](https://rules.emergingthreats.net/).
+
+The names Emerging Threats and Proofpoint as well as related names, marks, emblems and images are registered trademarks of their respective owners.
 
 ### DIY
 

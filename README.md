@@ -9,7 +9,7 @@ This repository extracts and categorizes malicious/unwanted domains from the Eme
 * [suspicious.txt](https://hosts.tweedge.net/suspicious.txt) - Blocks some dynamic DNS, link shorteners, pastebin services, games, etc. Suitable for strict corporate environments.
 * [informational.txt](https://hosts.tweedge.net/informational.txt) - Blocks benign callbacks and some potentially unwanted sites (ex. file sharing), etc. May be useful in *some* strict corporate environments.
 
-This allows home users to increase their defenses against new threats, and provides a window into some technology used to secure large or sensitive networks. At launch (2022-12-31), the `malicious.txt` host file blocked >2,100 unique domains (including domains used by major malware strains, APTs, and more) and *~96% of these domains were not found in popular PiHole anti-malware lists.*
+This allows home users to increase their defenses against new threats, and provides a window into some technology used to secure large or sensitive networks. At launch (2022-12-31), the `malicious.txt` host file blocked >2,100 unique domains (including domains used by major malware strains, APTs, and more) and *~87% of these domains were not found in popular PiHole anti-malware/anti-phishing/etc. lists.*
 
 ### FAQ
 

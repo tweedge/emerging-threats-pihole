@@ -24,8 +24,8 @@ jobs:
       run: bash fetch_et_open.sh
     - name: Generate hosts files from ET Open rules
       run: python3 et2dns.py --rules emerging-all.suricata5.rules
-    - name: Copy artisanal index file
-      run: cp misc/index.html output/
+    - name: Copy artisanal index file (haha) and favicons
+      run: cp misc/* output/
     - name: Sync to BunnyCDN Edge
       uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
       with:

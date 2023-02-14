@@ -11,15 +11,15 @@ This repository extracts and categorizes malicious/unwanted domains from the Eme
 
 This allows home users to increase their defenses against new threats, and provides a window into some technology used to secure large or sensitive networks. At launch (2022-12-31), the `malicious.txt` host file blocked >2,100 unique domains (including domains used by major malware strains, APTs, and more) and *~83% of these domains were not found in popular PiHole anti-malware/anti-phishing/etc. lists.*
 
-### Presence in List Aggregators
+### Presence in PiHole List Aggregators
 
-This project was published on r/pihole on 2023-02-12 and thanks to community recommendations, [malicious.txt](https://hosts.tweedge.net/malicious.txt) is now ingested into the following PiHole list aggregators:
+This project was published on r/pihole on 2023-02-12 and thanks to community recommendations, [malicious.txt](https://hosts.tweedge.net/malicious.txt) is now ingested into the following popular PiHole list aggregators:
 
 * [OISD's Big list](https://oisd.nl/),
 * [HaGeZi's Threat Intelligence Feeds list](https://github.com/hagezi/dns-blocklists),
 * and possibly others (feel free to submit an issue if there's one I missed!)
 
-Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked fur anyone using HaGeZi TIF or OISD. That being said, adding malicious.txt directly may still add value. Consider:
+Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked for anyone using HaGeZi TIF or OISD. That being said, adding malicious.txt directly may still add value. Consider:
 
 * Pros: Ensures you continue to block these domains if OISD or HaGeZi are no longer updated or remove this list from their superlists, blocks all domains on this list regardless of superlist filtering.
 * Cons: OISD and HaGeZi perform filtering to reduce false positives and list size, ex. excluding inactive domains (reducing false positives, but also potentially creating false negatives).

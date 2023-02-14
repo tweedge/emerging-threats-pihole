@@ -11,6 +11,16 @@ This repository extracts and categorizes malicious/unwanted domains from the Eme
 
 This allows home users to increase their defenses against new threats, and provides a window into some technology used to secure large or sensitive networks. At launch (2022-12-31), the `malicious.txt` host file blocked >2,100 unique domains (including domains used by major malware strains, APTs, and more) and *~83% of these domains were not found in popular PiHole anti-malware/anti-phishing/etc. lists.*
 
+### Presence in List Aggregators
+
+This project was published on r/pihole on 2023-02-12 and thanks to community recommendations, [malicious.txt](https://hosts.tweedge.net/malicious.txt) is now ingested into the following PiHole list aggregators:
+
+* [OISD's Big list](https://oisd.nl/) ,
+* [HaGeZi's Threat Intelligence Feeds list](https://github.com/hagezi/dns-blocklists),
+* and possibly others (feel free to submit an issue if there's one I missed!)
+
+Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked fur anyone using HaGeZi TIF or OISD. Though for the curious - or those who don't mind a few inactive domains in their PiHole in case they become active again - adding one or more of these lists directly may still add value.
+
 ### FAQ
 
 **Where is this data coming from / what is Emerging Threats?** [Emerging Threats](https://doc.emergingthreats.net/bin/view/Main/EmergingFAQ) is a part of Proofpoint, Inc. They maintain the Emerging Threats ruleset, which is a free (BSD-licensed) list of rules contributed to by their team and security researchers around the world. Using Emerging Threats and other rulesets, you can detect and prevent malicious network activity using an IPS (Intrusion Prevention System) such as [Snort](https://www.snort.org/) or [Suricata](https://suricata.io/).

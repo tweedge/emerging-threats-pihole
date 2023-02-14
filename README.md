@@ -15,11 +15,14 @@ This allows home users to increase their defenses against new threats, and provi
 
 This project was published on r/pihole on 2023-02-12 and thanks to community recommendations, [malicious.txt](https://hosts.tweedge.net/malicious.txt) is now ingested into the following PiHole list aggregators:
 
-* [OISD's Big list](https://oisd.nl/) ,
+* [OISD's Big list](https://oisd.nl/),
 * [HaGeZi's Threat Intelligence Feeds list](https://github.com/hagezi/dns-blocklists),
 * and possibly others (feel free to submit an issue if there's one I missed!)
 
-Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked fur anyone using HaGeZi TIF or OISD. Though for the curious - or those who don't mind a few inactive domains in their PiHole in case they become active again - adding one or more of these lists directly may still add value.
+Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked fur anyone using HaGeZi TIF or OISD. That being said, adding malicious.txt directly may still add value. Consider:
+
+* Pros: Ensures you continue to block these domains if OISD or HaGeZi are no longer updated or remove this list from their superlists, blocks all domains on this list regardless of superlist filtering.
+* Cons: OISD and HaGeZi perform filtering to reduce false positives and list size, ex. excluding inactive domains (reducing false positives, but also potentially creating false negatives).
 
 ### FAQ
 

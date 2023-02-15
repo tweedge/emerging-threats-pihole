@@ -21,8 +21,8 @@ This project was published on r/pihole on 2023-02-12 and thanks to community rec
 
 Anyone already using these lists in their PiHole will benefit from this list, ex. active domains (checked at list generation time) will be blocked for anyone using HaGeZi TIF or OISD. That being said, adding malicious.txt directly may still add value. Consider:
 
-* Pros: Ensures you continue to block these domains if OISD or HaGeZi are no longer updated or remove this list from their superlists, blocks all domains on this list regardless of superlist filtering.
-* Cons: OISD and HaGeZi perform filtering to reduce false positives and list size, ex. excluding inactive domains (reducing false positives, but also potentially creating false negatives).
+* Pros: Ensures you continue to block these domains if OISD or HaGeZi are no longer updated or remove this list from their superlists, and blocks all domains on this list regardless of superlist filtering (ex. many aggregators check to see if domains are online *before* adding them to their list).
+* Cons: This list is not filtered by whether or not a domain is active, so it includes many domains which likely don't resolve now and won't resolve in the future, which is slightly wasteful.
 
 ### FAQ
 

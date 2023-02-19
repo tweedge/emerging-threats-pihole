@@ -209,7 +209,7 @@ for line in rules_in_file:
     if not category:
         print(f"Couldn't categorize message: {message}")
 
-    write_by_category(category, f"127.0.0.1\t{clean_domain}")
+    write_by_category(category, f"0.0.0.0\t{clean_domain}")
 
 if categories["MALICIOUS"]["count"] < 1500:
     print("There are too few MALICIOUS domains -- is the input file correct?")

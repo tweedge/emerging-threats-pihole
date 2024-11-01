@@ -90,7 +90,7 @@ header = """# (Unofficial) Emerging Threats PiHole blocklist
 # Category: {}
 # Description: {}
 # Utility: {}
-# Status: Beta / in development
+# Status: Production/stable
 # Last modified: {}
 #
 # WHAT:

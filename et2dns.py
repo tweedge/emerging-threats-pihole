@@ -38,6 +38,7 @@ categories = {
             "ET WEB_CLIENT",
             "ET WEB_SERVER",
             "ET COINMINER",
+            "ET EXPLOIT",
         ],
     },
     "SUSPICIOUS": {
@@ -55,7 +56,7 @@ categories = {
         "description": "Blocks more link shorteners, benign callbacks, and some potentially unwanted sites (ex. file sharing), etc.",
         "utility": "Low - may be useful in certain strict corporate environments",
         "count": 0,
-        "tags": ["ET INFO", "ET HUNTING"],
+        "tags": ["ET INFO", "ET HUNTING", "ET SCAN"],
     },
 }
 

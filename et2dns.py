@@ -63,15 +63,24 @@ makedirs("output/", exist_ok=True)
 malicious_file = open("output/malicious.txt", "w")
 suspicious_file = open("output/suspicious.txt", "w")
 informational_file = open("output/informational.txt", "w")
+malicious_written = set()
+suspicious_written = set()
+informational_written = set()
 
 
 def write_by_category(category, write_this):
     if category == "MALICIOUS":
-        malicious_file.write(f"{write_this}\n")
+        if not write_this in malicious_written:
+            malicious_file.write(f"{write_this}\n")
+        malicious_written.add(write_this)
     if category == "SUSPICIOUS":
-        suspicious_file.write(f"{write_this}\n")
+        if not write_this in suspicious_written:
+            suspicious_file.write(f"{write_this}\n")
+        suspicious_written.add(write_this)
     if category == "INFORMATIONAL":
-        informational_file.write(f"{write_this}\n")
+        if not write_this in informational_written:
+            informational_file.write(f"{write_this}\n")
+        informational_written.add(write_this)
 
 
 header = """# (Unofficial) Emerging Threats PiHole blocklist

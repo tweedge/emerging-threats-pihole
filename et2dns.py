@@ -53,10 +53,10 @@ categories = {
         ],
     },
     "INFORMATIONAL": {
-        "description": "Blocks more link shorteners, benign callbacks, and some potentially unwanted sites (ex. file sharing), etc.",
+        "description": "Blocks more link shorteners, benign callbacks, potentially unwanted sites (ex. file sharing), retired rules that may no longer be accurate, etc.",
         "utility": "Low - may be useful in certain strict corporate environments",
         "count": 0,
-        "tags": ["ET INFO", "ET HUNTING", "ET SCAN"],
+        "tags": ["ET INFO", "ET HUNTING", "ET SCAN", "ET RETIRED"],
     },
 }
 
@@ -104,8 +104,9 @@ header = """# (Unofficial) Emerging Threats PiHole blocklist
 # advanced matching functionality and make bypassing the filter much more difficult. Some key examples:
 #  * If a particular strain of malware queries the public DNS resolver 8.8.8.8 directly, this could bypass PiHole on
 #    your network.
-#  * Emerging Threats includes much more than blocking specific domains, such as detecting and blocking DNS
-#    exfiltration attacks based on different parts of the DNS payload that PiHole would simply ignore.
+#  * Emerging Threats includes much more than blocking specific domains, such as blocking certain patterns in domains,
+#    detecting and blocking DNS exfiltration attacks based on different parts of the DNS payload that PiHole would
+#    simply ignore.
 #  * And of course, Emerging Threats covers 100s of different protocols with their signatures, extending FAR beyond
 #    DNS! This allows researchers to write very specific rules to detect and block threats at the network level,
 #    making it harder for malware or threats to hide from security staff by just changing what domain they use.
@@ -200,10 +201,22 @@ for line in rules_in_file:
     if mixed_allow_and_deny:
         continue
 
+    # find rules with multiple content fields
+    # ref: https://github.com/tweedge/emerging-threats-pihole/issues/2
+    rule_content = []
+    for option in parsed_rule.options:
+        if option["name"] == "content":
+            rule_content.append(option["value"])
+    
+    if len(rule_content) > 1:
+        print(f"Skipped conditionally-matching domain {rule_content} found in:")
+        print(input_rule)
+        continue
+
     clean_domain = parsed_rule.content.strip('."')
     parsed_domain = tldextract.extract(clean_domain)
 
-    # skip any suspicious TLDs as those are unsuitable for DNSBL
+    # skip any fake/unrecognized TLDs as those are unsuitable for DNSBL
     if parsed_domain.domain == "" or parsed_domain.suffix == "":
         continue
 
@@ -218,6 +231,7 @@ for line in rules_in_file:
 
     if not category:
         print(f"Couldn't categorize message: {message}")
+        continue
 
     write_by_category(category, f"0.0.0.0\t{clean_domain}")
 

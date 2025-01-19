@@ -2,6 +2,8 @@
 
 [![Status](https://github.com/tweedge/emerging-threats-pihole/actions/workflows/generate.yml/badge.svg)](https://hosts.tweedge.net/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
+[![Written By](https://img.shields.io/badge/written%20by-some%20nerd-red.svg)](https://chris.partridge.tech)
+[![Author Also Writes On](https://img.shields.io/mastodon/follow/108210086817505115?domain=https%3A%2F%2Fcybersecurity.theater)](https://cybersecurity.theater/@tweedge)
 
 This repository extracts and categorizes malicious/unwanted domains from the Emerging Threats ruleset for people using PiHole to block easily. The lists available are below, and are updated daily:
 
